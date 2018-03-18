@@ -12,12 +12,14 @@
     <div>
         <h1><a href="https://www.djangogirls.org">Django Girls Blog</a></h1>
     </div>
-
-    <div>
-        <p>published: 2018</p>
-        <h2><a href="">My first post</a></h2>
-        <p>My post is crazy like a craxy people</p>
-    </div>
+    
+    {% for post in posts %}
+        <div>
+            <p>published: {{post.publish_date}}</p>
+            <h1><a href="">{{post.title}}</a></h1>
+            <p>{{post.text|linebreaksbr}}</p>
+        </div>
+    {% endfor %}
     
 </body>
 </html>
